@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div className='bg-[#3C3C3C]' >
-    
       <Header/>
       <Posts/>
       <Footer/>

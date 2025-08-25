@@ -7,26 +7,26 @@ const Posts = () => {
 
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
-
+    
+    
+    const getPosts = async () => {
+        try {
+            const res = await getData()
+            setData(res.data)
+            setLoading(false)
+        }
+        catch (err) {
+            console.log(err)
+        }
+        
+    }
 
     useEffect(() => {
-        const getPosts = async () => {
-            try {
-                const res = await getData()
-                setData(res.data)
-                setLoading(false)
-            }
-
-            catch (err) {
-                console.log(err)
-            }
-
-        }
         getPosts()
     }, [])
 
     return (
-        <div style={{ minHeight: "calc(100vh - 170px)" }} className='px-14' >
+        <div style={{ minHeight: "calc(100vh - 170px)" }} className='px-4 md:px-14' >
 
             {
 

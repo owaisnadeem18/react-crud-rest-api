@@ -12,7 +12,7 @@ const SinglePost = ({id , title , body}) => {
                                 </h1>
                                 <h2 className="text-lg font-semibold mb-2 text-gray-800 line-clamp-1">
                                     {title}
-                                </h2>
+                                </h2>                                                                                                                                      
                                 <p className="text-gray-600 text-sm line-clamp-3">
                                     {body}
                                 </p>

@@ -36,7 +36,7 @@ const Footer = () => {
 
       {/* Lower Section */}
       <div className="text-center py-3 text-gray-400 text-xs flex items-center gap-1 w-full justify-center">
-        <CopyrightIcon className="inline-block w-4" /> {new Date().getFullYear()} Owais Nadeem. All rights reserved | Built with React & Tailwind
+        &copy; {new Date().getFullYear()} Owais Nadeem. All rights reserved | Built with React & Tailwind
       </div>
     </footer>
   );
