@@ -6,4 +6,4 @@ const api = axios.create({
 
 export const getData = async () => api.get("/posts")
 
-export const deleteData = async (id) => api.delete(`posts/${id}`)
+export const deleteData = async (id) => api.delete(`/posts/${id}`)
