@@ -37,7 +37,7 @@ const Posts = () => {
 
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-12">
                         {data.map((post) => (
-                           <SinglePost key={post.id} body={post.body} title={post.title} id={post.id} />
+                           <SinglePost key={post.id} body={post.body} title={post.title} id={post.id} data={data} setData={setData} />
                         ))}
                     </div>
             }

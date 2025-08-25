@@ -1,6 +1,7 @@
 import React from 'react'
+import { deletePost } from './handlers/deletePost'
 
-const SinglePost = ({id , title , body}) => {
+const SinglePost = ({id , title , body , data , setData}) => {
   return (
     <>
          <div
@@ -22,7 +23,7 @@ const SinglePost = ({id , title , body}) => {
                                     <button className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                                         Update
                                     </button>
-                                    <button className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
+                                    <button onClick={() => deletePost(id , data , setData )} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                                         Delete
                                     </button>
                                 </div>
