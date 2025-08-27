@@ -1,6 +1,6 @@
 import { Edit, NotebookPen, PlusCircle } from "lucide-react";
 import React, { useEffect } from "react";
-import { handleSubmit } from "../handlers";
+import { handleSubmit, handleValueChange } from "../handlers";
 
 const Header = ({input , setInput , updateData , isEdit , setUpdateData}) => {
 
@@ -14,7 +14,7 @@ const Header = ({input , setInput , updateData , isEdit , setUpdateData}) => {
   } , [updateData])
 
   return (
-    <form onSubmit={(e) => handleSubmit(e , input , setUpdateData , updateData?.id)} >
+    <form onSubmit={(e) => handleSubmit(e , input , setUpdateData , updateData?.id , setInput)} >
 
       <div className="flex justify-center items-center px-4 ">
         <div className="bg-white shadow-xl rounded-2xl p-6 my-10 w-full max-w-3xl flex flex-col md:flex-row gap-4 items-center">

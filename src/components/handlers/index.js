@@ -10,7 +10,7 @@ export const handleValueChange = (e , setInput) => {
 }
 
 
-export const handleSubmit = async (e ,  input, setUpdateData, id) => {
+export const handleSubmit = async (e ,  input, setUpdateData, id , setInput) => {
     e.preventDefault()
     const action = e.nativeEvent.submitter.value 
 
@@ -21,16 +21,23 @@ export const handleSubmit = async (e ,  input, setUpdateData, id) => {
     }
     else {   
         const updatedPost = { id, ...input };
-        editPost(updatedPost, setUpdateData);
+        editPost(updatedPost, setUpdateData , setInput );
     }
 
 }   
 
-export const editPost = async (post , setUpdateData) => {
-    setUpdateData(post)
-    await updateData(post.id , post)
-}
+export const editPost = async (post, setUpdateData, setInput) => {
+    try {
+        const res = await updateData(post.id, post);
 
+        if (res.status === 200) {
+            setUpdateData(post); 
+            setInput({ title: "", body: "" });
+        }
+    } catch (err) {
+        console.log("Update Error: ", err);
+    }
+};
 
 export const deletePost = async (postId , data , setData ) => {
 
