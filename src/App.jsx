@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div className='bg-[#3C3C3C]' >
-      <Header isEdit = {isEdit} updateData = {updateData} input = {input} setInput = {setInput} />
+      <Header isEdit = {isEdit} setUpdateData={setUpdateData} updateData = {updateData} input = {input} setInput = {setInput} />
       <Posts setUpdateData = {setUpdateData} setInput= {setInput} />
       <Footer/>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { deletePost } from './handlers/deletePost'
-import { editPost } from './handlers/editPost'
+import { deletePost, editPost } from './handlers'
+
 
 const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , isEdit }) => {
 
@@ -22,13 +22,13 @@ const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , is
 
                 <div className='flex gap-3' >
 
-                    <button onClick={() => editPost( post , setUpdateData )} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
+                    <button onClick={() => editPost({ id, title, body }, setUpdateData)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                         Update
                     </button>
                     <button onClick={() => deletePost(id, data, setData)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                         Delete
                     </button>
-                </div>
+                </div> 
             </div>
         </>
     )
