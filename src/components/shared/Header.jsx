@@ -2,7 +2,7 @@ import { Edit, NotebookPen, PlusCircle } from "lucide-react";
 import React, { useEffect } from "react";
 import { handleValueChange } from "../handlers/handleValueChange";
 
-const Header = ({input , setInput , updateData , setUpdateData}) => {
+const Header = ({input , setInput , updateData , isEdit}) => {
 
   useEffect(() => {
     if (updateData) {
@@ -16,7 +16,7 @@ const Header = ({input , setInput , updateData , setUpdateData}) => {
   return (
     <div className="flex justify-center items-center px-4 ">
       <div className="bg-white shadow-xl rounded-2xl p-6 my-10 w-full max-w-3xl flex flex-col md:flex-row gap-4 items-center">
-        
+          
         {/* Heading Input with Icon (Flex) */}
         <div className="flex items-center w-full flex-1 border border-gray-300 rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-gray-600">
           <Edit className="text-gray-500 mr-2" size={18} />
@@ -45,7 +45,7 @@ const Header = ({input , setInput , updateData , setUpdateData}) => {
 
         {/* Add Button */}
         <button className="hover:bg-gray-800 flex gap-2 items-center text-white bg-gray-700 font-semibold px-6 py-2 rounded-lg cursor-pointer shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
-          <PlusCircle size={20} /> Add
+          <PlusCircle size={20} /> {isEdit ? "Update" : "Add" } 
         </button>
       </div>
     </div>

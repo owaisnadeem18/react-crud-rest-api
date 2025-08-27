@@ -13,9 +13,11 @@ function App() {
 
   const [updateData , setUpdateData] = useState({})
 
+  const isEdit = Object.keys(updateData).length != 0
+
   return (
     <div className='bg-[#3C3C3C]' >
-      <Header updateData = {updateData} setUpdateData= {setUpdateData} input = {input} setInput = {setInput} />
+      <Header isEdit = {isEdit} updateData = {updateData} input = {input} setInput = {setInput} />
       <Posts setUpdateData = {setUpdateData} setInput= {setInput} />
       <Footer/>
     </div>

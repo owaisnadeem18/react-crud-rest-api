@@ -2,7 +2,7 @@ import React from 'react'
 import { deletePost } from './handlers/deletePost'
 import { editPost } from './handlers/editPost'
 
-const SinglePost = ({ post , id, title, body, data, setData , setInput , setUpdateData}) => {
+const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , isEdit }) => {
 
     return (
         <>
@@ -22,7 +22,7 @@ const SinglePost = ({ post , id, title, body, data, setData , setInput , setUpda
 
                 <div className='flex gap-3' >
 
-                    <button onClick={() => editPost( post , setInput , setUpdateData )} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
+                    <button onClick={() => editPost( post , setUpdateData )} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                         Update
                     </button>
                     <button onClick={() => deletePost(id, data, setData)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
