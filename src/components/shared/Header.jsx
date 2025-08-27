@@ -47,7 +47,7 @@ const Header = ({input , setInput , updateData , isEdit}) => {
           </div>
 
           {/* Add Button */}
-          <button type="submit" className="hover:bg-gray-800 flex gap-2 items-center text-white bg-gray-700 font-semibold px-6 py-2 rounded-lg cursor-pointer shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
+          <button type="submit" value={isEdit ? "Update" : "Add" } className="hover:bg-gray-800 flex gap-2 items-center text-white bg-gray-700 font-semibold px-6 py-2 rounded-lg cursor-pointer shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
             <PlusCircle size={20} /> {isEdit ? "Update" : "Add" } 
           </button >
         </div>
