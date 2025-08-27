@@ -3,13 +3,11 @@ import { getData } from '../api/API'
 import { Loader } from 'lucide-react'
 import SinglePost from './SinglePost'
 
-const Posts = ({setInput , setUpdateData , isEdit}) => {
+const Posts = ({setInput , setUpdateData}) => {
 
     
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
-    
-    console.log(isEdit)
     
     const getPosts = async () => {
         try {
@@ -39,7 +37,7 @@ const Posts = ({setInput , setUpdateData , isEdit}) => {
 
                     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pb-12">
                         {data.map((post) => (
-                           <SinglePost setInput={setInput} isEdit= {isEdit} setUpdateData = {setUpdateData} post={post} key={post.id} body={post.body} title={post.title} id={post.id} data={data} setData={setData} />
+                           <SinglePost setInput={setInput} setUpdateData = {setUpdateData} post={post} key={post.id} body={post.body} title={post.title} id={post.id} data={data} setData={setData} />
                         ))}
                     </div>
             }
