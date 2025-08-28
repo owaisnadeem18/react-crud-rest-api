@@ -8,7 +8,7 @@ function App() {
 
   const [input, setInput] = useState({
     title: "",
-    description: ""
+    body: ""
   });
 
   const [updateData , setUpdateData] = useState({})

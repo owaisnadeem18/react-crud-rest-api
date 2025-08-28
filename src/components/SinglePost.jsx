@@ -1,8 +1,8 @@
 import React from 'react'
-import { deletePost, editPost } from './handlers'
+import { deletePost, editPost, startEdit } from './handlers'
 
 
-const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , isEdit  , setInput}) => {
+const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , setInput}) => {
 
     return (
         <>
@@ -22,7 +22,7 @@ const SinglePost = ({ post , id, title, body, data, setData , setUpdateData , is
 
                 <div className='flex gap-3' >
 
-                    <button onClick={() => editPost({ id, title, body }, setUpdateData , setInput)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
+                    <button onClick={() => startEdit({ id, title, body }, setUpdateData , setInput)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">
                         Update
                     </button>
                     <button onClick={() => deletePost(id, data, setData)} className="mt-4 text-sm bg-gray-700 p-2  text-white rounded-lg font-medium cursor-pointer hover:bg-gray-900">

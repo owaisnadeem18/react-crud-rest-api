@@ -8,7 +8,7 @@ const Header = ({input , setInput , updateData , isEdit , setUpdateData}) => {
     if (updateData) {
       setInput({
         title: updateData.title || "" ,
-        description: updateData.body || ""
+        body: updateData.body || ""
       })
     }
   } , [updateData])
@@ -36,8 +36,8 @@ const Header = ({input , setInput , updateData , isEdit , setUpdateData}) => {
           <div className="flex items-center w-full flex-1 border border-gray-300 rounded-lg px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-gray-600">
             <NotebookPen className="text-gray-500 mr-2" size={18} />
             <input
-              name="description"
-              value={input.description}
+              name="body"
+              value={input.body}
               type="text"
               onChange={(e)=>handleValueChange(e,setInput)}
               placeholder="Add Description"
