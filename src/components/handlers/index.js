@@ -10,7 +10,7 @@ export const handleValueChange = (e , setInput) => {
 }
 
 
-export const handleSubmit = async (e ,  input, setUpdateData, id , setInput) => {
+export const handleSubmit = async (e ,  input, setUpdateData, id , setInput , data , setData) => {
 
     console.log(input , id)
 
@@ -24,12 +24,14 @@ export const handleSubmit = async (e ,  input, setUpdateData, id , setInput) => 
     }
     else {   
         const updatedPost = { id, ...input };
-        editPost(updatedPost, setUpdateData, setInput);
+        editPost(updatedPost, setUpdateData, setInput , data , setData);
     }
+
+    e.nativeEvent.submitter.value = "Add"
 
 }   
 
-export const editPost = async (post, setUpdateData, setInput) => {
+export const editPost = async (post, setUpdateData, setInput , data , setData ) => {
     try {
         
         console.log(post)
@@ -43,7 +45,7 @@ export const editPost = async (post, setUpdateData, setInput) => {
             });
         }
 
-        setUpdateData((prev) => prev.map((item) => item.id == post.id ? res.data : item))
+        setData((prev) => prev.map((item) => item.id == post.id ? res.data : item))
 
     } catch (err) {
         console.log("Update Error: ", err);

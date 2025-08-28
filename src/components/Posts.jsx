@@ -3,10 +3,9 @@ import { getData } from '../api/API'
 import { Loader } from 'lucide-react'
 import SinglePost from './SinglePost'
 
-const Posts = ({setInput , setUpdateData}) => {
+const Posts = ({setInput , setUpdateData , data , setData }) => {
 
     
-    const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     
     const getPosts = async () => {
