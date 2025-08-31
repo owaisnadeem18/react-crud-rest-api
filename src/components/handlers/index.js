@@ -33,7 +33,6 @@ export const handleSubmit = async (e ,  input, setUpdateData, id , setInput , da
 
 export const editPost = async (post, setUpdateData, setInput , data , setData ) => {
     try {
-        
         console.log(post)
 
         const res = await updateData(post.id, post);
@@ -46,6 +45,8 @@ export const editPost = async (post, setUpdateData, setInput , data , setData ) 
         }
 
         setData((prev) => prev.map((item) => item.id == post.id ? res.data : item))
+
+        setUpdateData({})
 
     } catch (err) {
         console.log("Update Error: ", err);
