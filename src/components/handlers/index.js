@@ -47,6 +47,8 @@ export const editPost = async (post, setUpdateData, setInput , data , setData ) 
 
         setData((prev) => prev.map((item) => item.id == post.id ? res.data : item))
 
+        setUpdateData({})
+
     } catch (err) {
         console.log("Update Error: ", err);
     }
