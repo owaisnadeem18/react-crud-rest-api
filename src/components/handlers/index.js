@@ -1,4 +1,4 @@
-import { deleteData, updateData } from "../../api/API"
+import { deleteData, postData, updateData } from "../../api/API"
 
 export const handleValueChange = (e , setInput) => {
 
@@ -20,7 +20,7 @@ export const handleSubmit = async (e ,  input, setUpdateData, id , setInput , da
     console.log("action is => " , action)
 
     if (action == "Add") {
-        addPost()
+        addPost(data , setData)
     }
     else {   
         const updatedPost = { id, ...input };
@@ -78,6 +78,20 @@ export const deletePost = async (postId , data , setData ) => {
 
 }
 
-export const addPost = async () => {
-    alert("Add Post Function Called")
-}
+export const addPost = async (input , setData , setInput) => {
+    try {
+        const res = await postData(input);
+
+        if (res.status === 201) {
+            setData((prev) => [res.data, ...prev]); // add new post in list
+
+            // clear form input fields
+            setInput({
+                title: "",
+                body: ""
+            });
+        }
+    } catch (err) {
+        console.log("Add Error: ", err);
+    }
+};
