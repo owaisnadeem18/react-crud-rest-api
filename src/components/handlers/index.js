@@ -79,5 +79,5 @@ export const deletePost = async (postId , data , setData ) => {
 }
 
 export const addPost = async () => {
-    console.log("Add Post Function Called")
+    alert("Add Post Function Called")
 }
