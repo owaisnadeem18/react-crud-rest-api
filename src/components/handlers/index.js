@@ -34,7 +34,7 @@ export const handleSubmit = async (e ,  input, setUpdateData, id , setInput , da
 export const editPost = async (post, setUpdateData, setInput , data , setData ) => {
     try {
         
-        console.log(post)
+        console.log(post)            
 
         const res = await updateData(post.id, post);
 
@@ -77,5 +77,5 @@ export const deletePost = async (postId , data , setData ) => {
 }
 
 export const addPost = async () => {
-    alert("add new post function")
+    console.log("Add Post Function Called")
 }
