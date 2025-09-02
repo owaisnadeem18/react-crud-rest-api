@@ -85,11 +85,6 @@ export const addPost = async (input , setData , setInput) => {
         if (res.status === 201) {
             setData((prev) => [res.data, ...prev]); // add new post in list
 
-            // clear form input fields
-            setInput({
-                title: "",
-                body: ""
-            });
         }
     } catch (err) {
         console.log("Add Error: ", err);
